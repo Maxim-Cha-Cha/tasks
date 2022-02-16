@@ -1,5 +1,6 @@
 class Animal {
-  constructor(name, color) {
+  constructor(type, name, color) {
+    this.type = type
     this.name = name;
     this.color = color;
   }
@@ -34,19 +35,19 @@ class Animal {
   }
 }
 class Cat extends Animal {
-  constructor(name, color) {
-    super(name, color);
+  constructor(type,name, color) {
+    super('Cat',name, color);
   }
   getSpeech() {
-    return "Meow";
+    return `${this.type} Meow`;
   }
 }
 class Dog extends Animal {
-  constructor(name, color) {
-    super(name, color);
+  constructor(type,name, color) {
+    super('Dog',name, color);
   }
   getSpeech() {
-    return "Gav";
+    return `${this.type} Gav`;
   }
 }
 
@@ -54,9 +55,9 @@ class Trainer {
   constructor(name) {
     this.name = name;
   }
-  trainerSpeech = (animal) => animal.getSpeech;
-  trainerEat = (animal) => animal.getEat;
-  trainerMove = (animal) => animal.getMove;
+  trainerSpeech  (animal) {return animal.getSpeech};
+  trainerEat (animal)  {return animal.getEat};
+  trainerMove  (animal)  {return animal.getMove};
 }
 
 const cat = new Cat("Barsik", "black");
