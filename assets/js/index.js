@@ -10,7 +10,7 @@ class Animal {
     if (typeof newName !== "string") {
       throw TypeError("Что-то пошло не так");
     }
-    this._name = newName;
+    this._name = newName
   }
   get color() {
     return this._color;
