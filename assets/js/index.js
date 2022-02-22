@@ -126,6 +126,6 @@ const toPower = function (num, exp) {
   } else if (exp > 1) {
     return num * toPower(num, exp - 1);
   } else if (exp < 1) {
-    return 1 / (num / toPower(num, exp + 1));
+    return 1 / (num / toPower(num, Math.abs(exp)-1));
   }
 };
